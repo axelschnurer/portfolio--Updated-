@@ -6,9 +6,25 @@
 
     <link rel="stylesheet" href="src/css/style.css">
 
+    <script>
+    /*
+    function selectInput() {
+      document.getElementById("myBtn").focus();
+      document.getElementById("myBtn").select();
+    }
+
+    window.onload = selectInput;
+    */
+    </script>
+
 </head>
 
 <body>
+
+  <button id="myBtn" onclick="changeDisplay()"></button>
+
+  <div class="flex">
+
     <div class="grid">
 
         <!-- Top -->
@@ -27,7 +43,7 @@
         <!-- Bottom Middle -->
         <div class="grid-item"></div>
         <div class="grid-item" id="buttons">
-            <div>
+            <div id="aboutMe" style="display: none;">
                 About Me
             </div>
         </div>
@@ -38,17 +54,77 @@
         <div class="grid-item"></div>
         <div class="grid-item"></div>
 
-        <div class="grid-item"></div>
-        <div class="grid-item" id="mediaIcons">
-            <div>
-                <a href="https://github.com/axelschnurer"><img src="src/images/githubLogo.svg"></a>
-            </div>
-            <div>
-                <a href="https://www.linkedin.com/in/axel-schnürer-079311251"><img src="src/images/linkedinLogo.svg"></a>
-            </div>
-        </div>
-        <div class="grid-item"></div>
     </div>
+
+    <div id="information">
+      <div class="box">
+        <h1>Contact</h1>
+        <h2>Phone Number</h2>
+        076-135 75 53 <br />
+        <h2>Mail Adress</h2>
+        axel.schnurer@gmail.com
+        <h2>Find Me On</h2>
+        <a href="www.linkedin.com/in/axel-schnürer"><u>LinkedIn</u></a> <br />
+        <a href="https://github.com/axelschnurer"><u>Github</u></a>
+      </div>
+      <div class="box">
+        <h1>Projects</h1>
+        <h2><a href="https://ntig-uppsala.github.io/Bengans-Biluthyrning/"><u>Bengans Biluthyrning</u></a></h2> 
+        <span class="smallHeading">08/29-09/23 2022</span>
+        A website made as part of my education. 
+        I worked on frontend development using HTML and CSS aswell as unit testing in Python using the seleniumbase library. 
+      </div>
+      <div class="box">
+        <h1>Education</h1>
+        <h2>Schools</h2>
+        Nti - Gymnasiet Uppsala, 2018 - 2022 <br />
+        <h2>Courses</h2>
+        Programmeringsteknik 1, Uppsala Universitet, 5HP, HT 2021 <br />
+        Naturvård & Biologisk Mångfald, Uppsala Universitet, 15HP, HT 2021
+      </div>
+      <div class="box">
+        <h1>Work Experience</h1>
+        <h2>Laboratorieassistent, SLU</h2>
+        <span class="smallHeading"></span>Uppsala</span> <!-- Do h6 or somn instead of a class--> 
+        Sommarjobb som laboratorieassistent på SLU. 
+        Arbetsuppgifter inkluderade främst disk och kapsylering av flaskor. <!-- Fix so text flows over when screen to small -->
+        <h2>Fotograf/Skribent, BOIU</h2>
+        <span class="smallHeading">Uppsala</span>
+        Uppdrag som fotograf för tidningen Word samt ett fåtal uppgifter som skribent. 
+        <h2>Värvare, Röda Korset</h2>
+        <span class="smallHeading">Uppsala</span>
+        Helgjobb som fältvärvare för Röda Korset. 
+        Arbetets främsta uppgift var att uppsöka potentiella månadsgivare. 
+        <h2>Sales Representative, Telia</h2>
+        <span class="smallHeading">Uppsala</span>
+        Arbete som butiksförsäljare hos Telia. 
+        Arbetets uppgifter inkluderade försäljning av hårdvara och Telias it-tjänster, <br />
+        hantering av servicefrågor såsom försäkringar samt kundstöd för personer som 
+        stött på problem med sina tjänster. <br />
+        Tjänsten inkluderade även andra vanliga butikssyslor,
+        exempelvis inleverans av varor. 
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    /*
+
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") { // If the user presses the "Enter" key on the keyboard
+        event.preventDefault(); // Cancel the default action, if needed
+        document.getElementById("myBtn").click(); // Trigger the button element with a click
+      }
+    });
+
+    function changeDisplay() {
+      document.getElementById("about").style.display == "grid";
+    }
+
+    */
+  </script>
+
 </body>
 
 </html>

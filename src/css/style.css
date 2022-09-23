@@ -3,21 +3,54 @@
 body {
     margin: 0px;
     background-color: #030303;
+    overflow-x: hidden;
 }
 
-img {
-    width: 50px;
+/* unvisited link */
+a:link {
+  color: inherit;
+  text-decoration: inherit;
 }
+
+/* visited link */
+a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* mouse over link */
+a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* selected link */
+a:active {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+.flex {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1st page */
 
 .grid {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template: 1fr 100px 100px 1fr auto / 1fr auto 1fr; /* How does this resize text? There should also be a max width and some overflow for the buttons . How would i center stuff here? */ 
+    grid-template: 1fr 100px 100px 1fr / 1fr auto 1fr; /* How does this resize text? There should also be a max width and some overflow for the buttons . How would i center stuff here? */ 
 }
 
 .grid-item {
-    /* Cant center this using grid cause the blinking button moves breaks line then? */
     text-align: left;
     margin: auto;
 }
@@ -33,11 +66,6 @@ img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* This kinda works to wrap buttons (See erlier comment), is it needed tho?
-    flex-wrap: wrap;
-    max-width: 60vw;
-    background-color: blue;
-     */
 }
 
 #buttons > div {
@@ -58,17 +86,6 @@ img {
     cursor: pointer;
 }
 
-#mediaIcons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#mediaIcons > div {
-    margin: 10px;
-}
-
 .blink {
     animation: blinker 1s step-start infinite;
   }
@@ -79,3 +96,35 @@ img {
     }
   }
   
+/* 2nd page */
+
+#information {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  background-color: #090909;
+  color: #f5f5f5;
+  line-height: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.box {
+  width: 50vw;
+  height: auto;
+  padding: 75px 100px 75px 100px;
+  margin: 50px;
+  border: 1px solid #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.smallHeading {
+  font-size: .75em;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
