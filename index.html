@@ -43,22 +43,22 @@
         <!-- Bottom Middle -->
         <div class="grid-item"></div>
         <div class="grid-item" id="buttons">
-          <button onclick="showButtons();" id="aboutMeButton" style="display: grid;">
+          <button onclick="showButtons();" id="aboutMeButton" style="display: none;">
             About Me
           </button>
-          <button onclick="displayInfo(this.id);" id="contactButton" style="display: none;">
+          <button onclick="displayInfo(this.id);" id="contact" style="display: none;">
             Contact
           </button>
-          <button onclick="displayInfo(this.id);" id="projectsButton" style="display: none;">
+          <button onclick="displayInfo(this.id);" id="projects" style="display: none;">
             Projects
           </button>
-          <button onclick="displayInfo(this.id);" id="educationButton" style="display: none;">
+          <button onclick="displayInfo(this.id);" id="education" style="display: none;">
             Education
           </button>
-          <button onclick="displayInfo(this.id);" id="workExperienceButton" style="display: none;">
-            Work_Experience
+          <button onclick="displayInfo(this.id);" id="workExperience" style="display: none;">
+            Work Experience
           </button>
-          <button onclick="displayInfo(this.id);" id="backButton" style="display: none;">
+          <button onclick="backButton();" id="back" style="display: none;">
             Back
           </button>
         </div>
@@ -71,10 +71,10 @@
 
     </div>
 
-    <!-- Id's should be updated to not break variable name scheme -->
+    <!-- Span class "smallHeading" should not exist, use h3 instead-->
 
     <div id="information">
-      <div class="box" id="Contact">
+      <div class="box" id="contactBox">
         <h1>Contact</h1>
         <h2>Phone Number</h2>
         076-135 75 53 <br />
@@ -84,14 +84,14 @@
         <a href="www.linkedin.com/in/axel-schnürer"><u>LinkedIn</u></a> <br />
         <a href="https://github.com/axelschnurer"><u>Github</u></a>
       </div>
-      <div class="box" id="Projects">
+      <div class="box" id="projectsBox">
         <h1>Projects</h1>
         <h2><a href="https://ntig-uppsala.github.io/Bengans-Biluthyrning/"><u>Bengans Biluthyrning</u></a></h2> 
         <span class="smallHeading">08/29-09/23 2022</span>
         A website made as part of my education. 
         I worked on frontend development using HTML and CSS aswell as unit testing in Python using the seleniumbase library. 
       </div>
-      <div class="box" id="Education">
+      <div class="box" id="educationBox">
         <h1>Education</h1>
         <h2>Schools</h2>
         Nti - Gymnasiet Uppsala, 2018 - 2022 <br />
@@ -99,7 +99,7 @@
         Programmeringsteknik 1, Uppsala Universitet, 5HP, HT 2021 <br />
         Naturvård & Biologisk Mångfald, Uppsala Universitet, 15HP, HT 2021
       </div>
-      <div class="box" id="Work_Experience">
+      <div class="box" id="workExperienceBox">
         <h1>Work Experience</h1>
         <h2>Laboratorieassistent, SLU</h2>
         <span class="smallHeading"></span>Uppsala</span> <!-- Do h6 or somn instead of a class--> 
@@ -126,25 +126,39 @@
 
   <script>
 
+    /* Function that displays the aboutMeButton and puts focus on it */
     function showButton1() {
       document.getElementById("aboutMeButton").style.display = "grid";
       document.getElementById("aboutMeButton").focus();
     }
     
+    /* Function that displays all buttons except the aboutMeButton */
     function showButtons() {
       document.getElementById("aboutMeButton").style.display = "none"
-      document.getElementById("contactButton").style.display = "grid";
-      document.getElementById("projectsButton").style.display = "grid";
-      document.getElementById("educationButton").style.display = "grid";
-      document.getElementById("workExperienceButton").style.display = "grid";
-      document.getElementById("backButton").style.display = "grid";
-      document.getElementById("contactButton").focus();
+      document.getElementById("contact").style.display = "grid";
+      document.getElementById("projects").style.display = "grid";
+      document.getElementById("education").style.display = "grid";
+      document.getElementById("workExperience").style.display = "grid";
+      document.getElementById("back").style.display = "grid";
+      document.getElementById("contact").focus();
     }
 
+    /* Function that displays only the aboutMeButton */
+    function backButton() {
+      document.getElementById("aboutMeButton").style.display = "grid"
+      document.getElementById("contact").style.display = "none";
+      document.getElementById("projects").style.display = "none";
+      document.getElementById("education").style.display = "none";
+      document.getElementById("workExperience").style.display = "none";
+      document.getElementById("back").style.display = "none";
+      document.getElementById("aboutMeButton").focus();
+    }
+
+    /* Function to scroll to section corresponding with buttonpress */
     function displayInfo(clicked_id) {
-      let currentSection = document.getElementById(clicked_id).innerHTML; // This shouldnt use innerHTML, find more efficient system
-      alert(currentSection); // Remove after debugging
-      document.location.href = "#information"; // Incorporate variable "currentSection" into this
+      var currentSection = document.getElementById(clicked_id).id; // This shouldnt use innerHTML, find more efficient system
+      currentSection = currentSection + 'Box'
+      document.getElementById(currentSection).scrollIntoView({behavior: "smooth"});  // Incorporate variable "currentSection" into this
     }
 
   </script>
