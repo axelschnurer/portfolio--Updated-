@@ -65,6 +65,21 @@ h1 {
     color: #f5f5f5;
 }
 
+#text1 {
+  display: inline-block;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: typing 1.5s steps(40, end);
+}
+
+#text2 {
+  display: inline-block;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation:  typing2 1s steps(1, end),
+              typing 1.5s 1s steps(40, end) ; /* Runs animation "typing2" then runs animation "typing" with 1 second delay*/
+}
+
 #buttons {
     display: flex;
     flex-direction: row;
@@ -102,7 +117,25 @@ h1 {
       opacity: 0;
     }
   }
-  
+
+  @keyframes typing {
+    from { 
+      width: 0%;
+    }
+    to { 
+      width: 100% 
+    }
+  }
+
+  @keyframes typing2 {
+    from { 
+      opacity: 0;
+    }
+    to { 
+      
+    }
+  }
+
 /* 2nd page */
 
 #information {
